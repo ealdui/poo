@@ -39,6 +39,7 @@ public class Cliente {
         setEstado(estado);
         setPais(pais);
     }
+
 		
 	public Cliente() {
 		// TODO Auto-generated constructor stub

@@ -83,7 +83,7 @@ public class BaseDatos {
     }
     
     
-public List<Usuario1> devolverUsuarios(){
+	public List<Usuario1> devolverUsuarios(){
     	
     	List<Usuario1> lista = new ArrayList<Usuario1>();
     	
@@ -98,7 +98,17 @@ public List<Usuario1> devolverUsuarios(){
     	return lista;
     	
     }
-    	
+
+    public static void listarObjeto(List<?> Lst){
+    	if (Lst.size()>=1){
+	    	for (int i = 0; i < Lst.size() ; i++) {
+				System.out.println(Lst.get(i));
+			}
+    	}else{ 
+    		System.out.println("No se encontraron resultados");
+    		//MENSAJE POR NO ENCONTRAR RESULTADOS
+    	}
+    }
  }
     
     

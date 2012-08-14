@@ -27,6 +27,7 @@ public class ClienteControlador {
 		public List<Cliente> buscarCliente(List<Cliente> aListadoCliente, Cliente sFiltros) {
 			List<Cliente> aListado=new ArrayList<Cliente>();
 			Cliente sCliente=null;
+		
 			if(sFiltros.getCodigo()=="0" && sFiltros.getNombres()=="" && sFiltros.getApellidos()==""
 					&& sFiltros.getNumeroDocumento()=="")
 			{
@@ -66,7 +67,21 @@ public class ClienteControlador {
 			return aListado;
 		}
 					
-		public Cliente buscarClienteXCodigo(List<Cliente> aListadoCliente, String iCodigo) {
+		public Boolean buscarClienteXCodigo(List<Cliente> aListadoCliente, String iCodigo) {
+			//Cliente sClienteResultado= new Cliente();
+			Cliente sCliente=null;
+			Boolean bEncontro=false;
+			for (int i = 0; i < aListadoCliente.size(); i++) {	
+				sCliente=aListadoCliente.get(i);
+				if (sCliente.getCodigo()==iCodigo )
+				{
+					bEncontro=true;
+				}
+			}
+			return bEncontro;
+		}
+		
+		public Cliente buscarClienteXCodigo_v2(List<Cliente> aListadoCliente, String iCodigo) {
 			Cliente sClienteResultado= new Cliente();
 			Cliente sCliente=null;
 			for (int i = 0; i < aListadoCliente.size(); i++) {
@@ -85,7 +100,7 @@ public class ClienteControlador {
 			
 			return sClienteResultado;
 		}
-		
+
 		public List<Cliente> GrabarCliente(List<Cliente> aListadoCliente, Cliente sCliente)
 		{
 			aListadoCliente.add(sCliente);
